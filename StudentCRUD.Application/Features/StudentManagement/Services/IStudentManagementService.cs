@@ -1,4 +1,5 @@
 ﻿using StudentCRUD.Domain.Entities;
+using StudentCRUD.Domain.UnitOfWorks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace StudentCRUD.Application.Features.StudentManagement.Services
         Task AddStudentAsync(Student student);
         Task UpdateStudentAsync(Student student);
         Task DeleteStudentAsync(Guid id);
-        Task<ICollection<Student>> GetStudentsAsync(); 
+        Task<(IList<Student> records, int total, int totalDisplay)>GetPagedStudentsAsync
+            (int pageIndex, int pageSize, string searchTitle, string sortBy);
+        Task<IList<Student>>? GetStudentsAsync();
 
     }
 }

@@ -10,5 +10,7 @@ namespace StudentCRUD.Domain.Repositories
 {
     public interface IStudentRepository : IRepositoryBase<Student, Guid>
     {
+        Task<(IList<Student> records, int total, int totalDisplay)>
+            GetTableDataAsync(string searchTitle, string orderBy, int pageIndex, int pageSize);
     }
 }

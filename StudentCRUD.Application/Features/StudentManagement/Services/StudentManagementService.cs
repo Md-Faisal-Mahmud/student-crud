@@ -27,9 +27,15 @@ namespace StudentCRUD.Application.Features.StudentManagement.Services
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<Student>> GetStudentsAsync()
+        public async Task<IList<Student>>? GetStudentsAsync()
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.StudentRepository.GetAllAsync();
+        }
+
+        public async Task<(IList<Student> records, int total, int totalDisplay)>
+            GetPagedStudentsAsync(int pageIndex, int pageSize, string searchTitle, string sortBy)
+        {
+            return await _unitOfWork.StudentRepository.GetTableDataAsync(searchTitle, sortBy, pageIndex, pageSize);
         }
 
         public Task UpdateStudentAsync(Student student)

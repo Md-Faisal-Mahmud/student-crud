@@ -2,6 +2,7 @@
 using FirstDemo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using StudentCRUD.Domain.UnitOfWorks;
+using StudentCRUD.Infrastructure.Utilites;
 
 namespace StudentCRUD.Infrastructure
 {

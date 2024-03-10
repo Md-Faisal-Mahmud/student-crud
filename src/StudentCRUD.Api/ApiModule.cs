@@ -8,6 +8,7 @@ namespace StudentCRUD.Api
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<StudentCreateRequestHandler>().AsSelf();
+            builder.RegisterType<StudentListRequestHandler>().AsSelf();
 
             base.Load(builder);
         }

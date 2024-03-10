@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using StudentCRUD.Infrastructure;
 using Npgsql;
 
-namespace FirstDemo.Infrastructure
+namespace StudentCRUD.Infrastructure.Utilites
 {
     public class AdoNetUtility : IAdoNetUtility
     {
@@ -43,7 +43,7 @@ namespace FirstDemo.Infrastructure
                 transaction.Commit();
 
             }
-            catch(DbException dex)
+            catch (DbException dex)
             {
                 transaction.Rollback();
             }
