@@ -12,7 +12,7 @@ using StudentCRUD.Infrastructure;
 namespace StudentCRUD.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240309185440_AddStudentTable")]
+    [Migration("20240310064343_AddStudentTable")]
     partial class AddStudentTable
     {
         /// <inheritdoc />
@@ -37,8 +37,8 @@ namespace StudentCRUD.Api.Migrations
                     b.Property<string>("FatherName")
                         .HasColumnType("text");
 
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
 
                     b.Property<string>("MotherName")
                         .HasColumnType("text");

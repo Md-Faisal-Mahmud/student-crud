@@ -17,6 +17,7 @@ namespace StudentCRUD.Api.Controllers
             _logger = logger;
             _scope = scope;
         }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] StudentCreateRequestHandler request)
         {
@@ -24,11 +25,13 @@ namespace StudentCRUD.Api.Controllers
             {
                 request.ResolveDependency(_scope);
                 await request.AddStudentAsync();
-                return Ok("Student Created Successfully!");
+
+                return Created();
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
+
                 return StatusCode(500, "Oops! Something went wrong. Please try again later.");
             }
         }

@@ -23,4 +23,8 @@
     <ProjectReference Include="..\StudentCRUD.Infrastructure\StudentCRUD.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

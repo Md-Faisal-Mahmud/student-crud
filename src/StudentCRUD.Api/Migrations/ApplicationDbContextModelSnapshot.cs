@@ -34,8 +34,8 @@ namespace StudentCRUD.Api.Migrations
                     b.Property<string>("FatherName")
                         .HasColumnType("text");
 
-                    b.Property<byte[]>("Image")
-                        .HasColumnType("bytea");
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
 
                     b.Property<string>("MotherName")
                         .HasColumnType("text");

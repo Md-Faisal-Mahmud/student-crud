@@ -9,7 +9,7 @@ namespace StudentCRUD.Api.RequestHandlers.StudentHandler
     {
         private IStudentManagementService _studentManagementService;
 
-        public byte[]? Image { get; set; }
+        public string? Image { get; set; }
         public string? Name { get; set; }
         public int? Age { get; set; }
         public string? FatherName { get; set; }
