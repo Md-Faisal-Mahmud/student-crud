@@ -1,4 +1,7 @@
 ﻿using Autofac;
+using StudentCRUD.Application;
+using StudentCRUD.Domain.Repositories;
+using StudentCRUD.Infrastructure.Repositories;
 
 namespace StudentCRUD.Infrastructure
 {
@@ -23,6 +26,12 @@ namespace StudentCRUD.Infrastructure
             builder.RegisterType<ApplicationDbContext>().As<IApplicationDbContext>()
                 .WithParameter("connectionString", _connectionString)
                 .WithParameter("migrationAssembly", _migrationAssemblyName)
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<ApplicationUnitOfWork>().As<IApplicationUnitOfWork>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<StudentRepository>().As<IStudentRepository>()
                 .InstancePerLifetimeScope();
 
             base.Load(builder);

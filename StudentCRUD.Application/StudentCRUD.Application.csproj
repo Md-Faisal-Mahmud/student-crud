@@ -14,4 +14,8 @@
     <ProjectReference Include="..\src\StudentCRUD.Domain\StudentCRUD.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\StudentManagement\DTOs\" />
+  </ItemGroup>
+
 </Project>

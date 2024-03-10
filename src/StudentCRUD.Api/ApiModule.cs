@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using StudentCRUD.Api.RequestHandlers.StudentHandler;
 
 namespace StudentCRUD.Api
 {
@@ -6,6 +7,8 @@ namespace StudentCRUD.Api
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<StudentCreateRequestHandler>().AsSelf();
+
             base.Load(builder);
         }
     }
